@@ -1,8 +1,26 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import renderer from 'react-test-renderer';
+import App from '../src/App'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it('change la classe quand il est survolé', () => {
+  const component = renderer.create(
+    <App page="http://www.facebook.com">Facebook</App>,
+  );
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+
+  // manually trigger the callback
+  renderer.act(() => {
+    tree.props.onMouseEnter();
+  });
+  // re-rendering
+  tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+
+  // manually trigger the callback
+  renderer.act(() => {
+    tree.props.onMouseLeave();
+  });
+  // re-rendering
+  tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
