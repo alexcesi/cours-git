@@ -1,7 +1,7 @@
 
 import './App.css';
 
-const HelloWorld = () =>
+const App = () =>
   <h1>Hello, World!</h1>
 
-export default HelloWorld
+export default App
