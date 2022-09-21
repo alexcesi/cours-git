@@ -20,6 +20,6 @@ jobs:
       - name: Build Artefact 
         run: npm run build
       - name: Echo variables
-        echo: ${{ secrets.SECRET_ID }} ${{ secrets.ACCESS_TOKEN }}
+        run: echo ${{ secrets.SECRET_ID }} ${{ secrets.ACCESS_TOKEN }}
       - name: Deploy app
         run: netlify deploy --site ${{ secrets.SECRET_ID }} --auth ${{ secrets.ACCESS_TOKEN }} --dir build/ --prod
