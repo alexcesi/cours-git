@@ -20,4 +20,4 @@ jobs:
       - name: Build Artefact 
         run: npm run build
       - name: Deploy app
-        run: netlify deploy --site ${{SECRET_ID}} --auth ${{ACCESS_TOKEN}} --dir build/ --prod
+        run: netlify deploy --site ${SECRET_ID} --auth ${ACCESS_TOKEN} --dir build/ --prod
