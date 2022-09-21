@@ -19,7 +19,7 @@ export default function Link({ page, children }) {
   };
 
   return (
-    
+    <>
     <a
       className={status}
       href={page || '#'}
@@ -28,6 +28,9 @@ export default function Link({ page, children }) {
     >
       {children}
     </a>
-   
+    <div className='test'>
+    <h1>Hello World</h1>
+      </div>
+    </>
   );
 }
