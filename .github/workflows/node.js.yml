@@ -29,7 +29,6 @@ jobs:
             ${{ runner.os }}-node-
       - name: Test Artefact 
         run: npm test
-      
       - name: Echo variable
         run: echo ${{ secrets.SECRET_ID }} ${{ secrets.ACCESS_TOKEN }}
       - name: Deploy app
