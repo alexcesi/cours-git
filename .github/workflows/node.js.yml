@@ -17,9 +17,9 @@ jobs:
         uses: actions/cache@v3.0.8
         with:
         path:
-        - node_modules
-        - package-lock.json
-        - build 
+            - node_modules
+            - package-lock.json
+            - build 
       - name: Test Artefact 
         run: npm test
       - name: Echo variable
